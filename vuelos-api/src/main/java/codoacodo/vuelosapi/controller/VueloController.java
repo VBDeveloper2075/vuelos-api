@@ -48,21 +48,36 @@ public class VueloController {
     }
 
     @PostMapping("/crear")
-public Vuelo crearVuelo(@RequestBody Vuelo nuevoVuelo) {
+    public Vuelo crearVuelo(@RequestBody Vuelo nuevoVuelo) {
         vuelos.add(nuevoVuelo);
         return nuevoVuelo;
     }
 
-        @PutMapping("/actualizar/{id}")
-public Vuelo actualizarVuelo(@PathVariable Long id, @RequestBody Vuelo vueloActualizado) {
-    // Aquí iría la lógica para actualizar un vuelo
-
-    return vueloActualizado;
+    @PutMapping("/actualizar/{id}")
+    public Vuelo actualizarVuelo(@PathVariable Long id, @RequestBody Vuelo vueloActualizado) {
+        for (int i = 0; i < vuelos.size(); i++) {  //metodo para obtener el largo de una coleccion
+            if (vuelos.get(i).getId().equals(id)) {
+                vuelos.set(i, vueloActualizado);
+                return vueloActualizado;
+            }
         }
+        return null;
+    }
 
-        @DeleteMapping("/borrar/{id}")
-public String borrarVuelo(@PathVariable Long id) {
-    // Aquí iría la lógica para borrar un vuelo
-    return "Vuelo con id " + id + " borrado";
+    @DeleteMapping("/borrar/{id}")
+    public String borrarVuelo(@PathVariable Long id) {
+        for (int i = 0; i < vuelos.size(); i++) {
+            if (vuelos.get(i).getId().equals(id)) {
+                vuelos.remove(i);
+                return "Vuelo con id " + id + " borrado";
+            }
         }
+        // mensaje si no se encontró el vuelo
+        return "Vuelo con id " + id + " no encontrado";
+    }
 }
+
+
+
+
+

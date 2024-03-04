@@ -15,7 +15,6 @@ public class VuelosApiApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(VuelosApiApplication.class, args);
-
     }
 }
 
