@@ -20,12 +20,12 @@ public class Vuelo {
 //    manualmente.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String origen;
     private String destino;
-    private LocalDateTime fechaHoraSalida;
-    private LocalDateTime fechaHoraLlegada;
-    private double precioEnPesos;
+    private LocalDateTime fecha_hora_llegada;
+    private LocalDateTime fecha_hora_salida;
     private String frecuencia;
+    private String origen;
+    private double precio_en_pesos;
 
     public void setId(Long id) {
     }

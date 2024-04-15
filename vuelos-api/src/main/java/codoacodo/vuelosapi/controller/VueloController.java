@@ -16,14 +16,13 @@ public class VueloController {
     @Autowired
     private VueloService vueloService;
 
-    @PostMapping
+    @PostMapping("/agregar")
     public Vuelo crearVuelo(@RequestBody Vuelo vuelo) {
-        System.out.println("VueloController.crearVuelo");
         return vueloService.crearVuelo(vuelo);
     }
 
 //    este metodo devuelve una lista de vuelos
-    @GetMapping
+    @GetMapping("")
     public List<Vuelo> listarVuelos() {
         return (List<Vuelo>) vueloService.listarVuelos();
     }
