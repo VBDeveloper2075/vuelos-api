@@ -17,8 +17,8 @@ public class VueloController {
     private VueloService vueloService;
 
     @PostMapping("/agregar")
-    public Vuelo crearVuelo(@RequestBody Vuelo vuelo) {
-        return vueloService.crearVuelo(vuelo);
+    public void crearVuelo(@RequestBody Vuelo vuelo) {
+        vueloService.crearVuelo(vuelo);
     }
 
 //    este metodo devuelve una lista de vuelos

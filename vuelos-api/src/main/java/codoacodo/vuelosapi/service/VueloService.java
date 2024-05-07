@@ -4,7 +4,7 @@ import codoacodo.vuelosapi.model.Vuelo;
 import java.util.List;
 
 public interface VueloService {
-    Vuelo crearVuelo(Vuelo vuelo);
+    public void crearVuelo(Vuelo vuelo);
     List<Vuelo> listarVuelos();
     Vuelo devolverVuelo(Long id);
     Vuelo actualizarVuelo(Vuelo vuelo);

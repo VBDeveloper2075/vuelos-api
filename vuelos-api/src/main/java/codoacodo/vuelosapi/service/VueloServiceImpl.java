@@ -11,11 +11,11 @@ import java.util.List;
 public class VueloServiceImpl implements VueloService {
 
     @Autowired
-    private VueloRepository vueloRepository;
+    public VueloRepository vueloRepository;
 
     @Override
-    public Vuelo crearVuelo(Vuelo vuelo) {
-        return vueloRepository.save(vuelo);
+    public void crearVuelo(Vuelo vuelo) {
+        vueloRepository.save(vuelo);
     }
 
     @Override
