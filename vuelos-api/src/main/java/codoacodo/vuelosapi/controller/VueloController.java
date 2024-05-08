@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import codoacodo.vuelosapi.service.VueloService;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/vuelos")
@@ -38,9 +39,26 @@ public class VueloController {
         return vueloService.actualizarVuelo(vuelo);
     }
 
+    @PutMapping("/update")
+    public Optional<Vuelo> updateVuelo(@RequestBody Vuelo vuelo) {
+        return vueloService.update(vuelo);
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<?> borrarVuelo(@PathVariable Long id) {
         vueloService.borrarVuelo(id);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/locations")
+    public List<Vuelo> getVueloByLocation(@RequestParam String origen) {
+        return vueloService.getByOrigen(origen);
+    }
+
+    @GetMapping("/ofertas")
+    public List<Vuelo> getOfertas() {
+        int ofertas = 100000;
+        return vueloService.getOfertas(ofertas);
+    }
+
 }
