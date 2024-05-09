@@ -1,5 +1,7 @@
 package codoacodo.vuelosapi.service;
 
+import codoacodo.vuelosapi.configuration.VueloConfiguration;
+import codoacodo.vuelosapi.model.Dolar;
 import codoacodo.vuelosapi.model.Vuelo;
 import codoacodo.vuelosapi.repository.VueloRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,12 +11,16 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class VueloServiceImpl implements VueloService {
 
     @Autowired
     public VueloRepository vueloRepository;
+
+    @Autowired
+    public VueloConfiguration vueloConfiguration;
 
     @Override
     public void crearVuelo(Vuelo vuelo) {
@@ -56,12 +62,22 @@ public class VueloServiceImpl implements VueloService {
     }
 
     @Override
-    public Object getOfertas(Integer ofertas) {
-        return null;
-    }
-    
+    public List<Vuelo> getOfertas(Integer ofertas) {
+    // obtenemos todos los vuelos de la base de datos utilizando el método findAll() del repositorio
+    return vueloRepository.findAll().stream()
+            // método filter() para filtrar aquellos vuelos cuyo precio es menor o igual a ofertas.
+        .filter(vuelo -> vuelo.getPrecio_en_pesos()<= ofertas)
+        .collect(Collectors.toList());
+}
+
     @Override
-    public void getOfertas(Integer ofertas){
+    public void setOfertas(Integer ofertas){
         List<Vuelo> vuelos = new ArrayList<>();
-    };
+    }
+
+    @Override
+    public Dolar getDolar() {
+        return vueloConfiguration.fetchDolar();
+    }
+
 }

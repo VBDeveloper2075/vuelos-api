@@ -4,10 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
@@ -17,6 +14,7 @@ import java.time.LocalDateTime;
 @Data
 public class Vuelo {
     @Setter
+    @Getter
     @Id
 //    ver si funciona el autoincremental, y si no, borrar lineas 4 y 21. en workbench funciona poniendo el id
 //    manualmente.
@@ -29,4 +27,7 @@ public class Vuelo {
     private String origen;
     private double precio_en_pesos;
 
+    public Double getPrecio_en_pesos()    {
+        return precio_en_pesos;
+    }
 }

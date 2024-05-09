@@ -1,5 +1,6 @@
 package codoacodo.vuelosapi.controller;
 
+import codoacodo.vuelosapi.model.Dolar;
 import codoacodo.vuelosapi.model.Vuelo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -59,6 +60,11 @@ public class VueloController {
     public List<Vuelo> getOfertas() {
         int ofertas = 100000;
         return vueloService.getOfertas(ofertas);
+    }
+
+    @GetMapping("/dolarPrice")
+    public Dolar getDolar() {
+        return vueloService.getDolar();
     }
 
 }
