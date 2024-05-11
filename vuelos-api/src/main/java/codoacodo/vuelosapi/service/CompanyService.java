@@ -26,7 +26,7 @@ public class CompanyService {
         return companyRepository.findById(id);
     }
 
-    public void deleteCompany(Long id) {
+    public void borrarCompany(Long id) {
         companyRepository.deleteById(id);
     }
 
