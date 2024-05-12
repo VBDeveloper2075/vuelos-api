@@ -13,7 +13,7 @@ public class VueloDto {
         private String destino;
         private LocalDateTime fecha_hora_llegada;
         private LocalDateTime fecha_hora_salida;
-        private double convertedPrice;
-        private String frequency;
+        private double precio_en_pesos;
+        private String frecuencia;
         private Company company;
 }

@@ -1,8 +1,10 @@
 package codoacodo.vuelosapi.model;
 
+import lombok.Data;
+
 import java.time.LocalDateTime;
 
-@lombok.Data
+@Data
 public class Dolar {
     private String moneda;
     private String casa;

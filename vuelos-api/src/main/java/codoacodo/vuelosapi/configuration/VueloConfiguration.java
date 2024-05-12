@@ -19,7 +19,8 @@ public class VueloConfiguration {
 
     public Dolar fetchDolar() {
         RestTemplate restTemplate = new RestTemplate();
-        String apiUrl = "https://www.dolarapi.com/v1/dolares/tarjeta";
-        return restTemplate.getForObject(apiUrl, Dolar.class);
+        //String apiUrl = "https://www.dolarapi.com/v1/dolares/tarjeta";
+        //return restTemplate.getForObject(apiUrl, Dolar.class);
+        return restTemplate.getForObject("https://www.dolarapi.com/v1/dolares/tarjeta", Dolar.class);
     }
 }
