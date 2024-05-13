@@ -77,7 +77,8 @@ public class VueloServiceImpl implements VueloService {
 
     @Override
     public Dolar getDolar() {
-        return vueloConfiguration.fetchDolar();
+        final Dolar dolar = vueloConfiguration.fetchDolar();
+        return dolar;
     }
 
 }

@@ -15,6 +15,6 @@ public interface VueloService {
     List<Vuelo> getByOrigen(String origen);
     Optional<Vuelo> update(Vuelo vuelo);
     List<Vuelo> getOfertas(Integer ofertas);
-    public Dolar getDolar();
+    public Dolar getDolar( );
     public void setOfertas(Integer ofertas);
 }
