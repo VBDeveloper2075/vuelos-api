@@ -18,6 +18,10 @@ public class VueloController {
     @Autowired
     private VueloService vueloService;
 
+    public VueloController(VueloService vueloService) {
+        this.vueloService = vueloService;
+    }
+
     @PostMapping("/agregar")
     public Vuelo crearVuelo(@RequestBody Vuelo vuelo) {
         vueloService.crearVuelo(vuelo);

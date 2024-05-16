@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/company")
+@RequestMapping("api/companies")
 public class CompanyController {
 
     @Autowired
@@ -25,18 +25,18 @@ public class CompanyController {
         return companyService.getCompanyById(id);
     }
 
-    @DeleteMapping("/borrarcompany/{id}")
+    @DeleteMapping("/{id}")
     public void borrarCompany(@PathVariable Long id) {
         companyService.borrarCompany(id);
     }
 
 
-    @PostMapping("/addcompany")
+    @PostMapping("/")
     public void addCompany(@RequestBody Company company){
         companyService.addCompany(company);
     }
 
-    @PutMapping("/updatecompany")
+    @PutMapping("/")
     public Optional<Company> updateCompany(@RequestBody Company company) {
         return companyService.updateCompany(company);
     }
