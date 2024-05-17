@@ -12,9 +12,9 @@ public interface VueloService {
     Vuelo devolverVuelo(Long id);
     Vuelo actualizarVuelo(Vuelo vuelo);
     void borrarVuelo(Long id);
-    List<Vuelo> getByOrigen(String origen);
+    List<Vuelo> getByOrigenyDestino(String origen, String destino);
     Optional<Vuelo> update(Vuelo vuelo);
     List<Vuelo> getOfertas(Integer ofertas);
-    public Dolar getDolar( );
+    public double getDolar();
     public void setOfertas(Integer ofertas);
 }

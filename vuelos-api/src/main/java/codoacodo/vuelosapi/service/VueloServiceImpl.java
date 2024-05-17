@@ -6,7 +6,6 @@ import codoacodo.vuelosapi.model.Vuelo;
 import codoacodo.vuelosapi.repository.VueloRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -53,6 +52,11 @@ public class VueloServiceImpl implements VueloService {
         vueloRepository.deleteById(id);
     }
 
+    @Override
+    public List<Vuelo> getByOrigenyDestino(String origen, String destino) {
+        return null;
+    }
+
     public List<Vuelo> getByOrigen(String origen) {
         return vueloRepository.findByOrigen(origen);
     }
@@ -77,8 +81,8 @@ public class VueloServiceImpl implements VueloService {
     }
 
     @Override
-    public Dolar getDolar() {
-        return vueloConfiguration.fetchDolar();
+    public double getDolar() {
+        return vueloConfiguration.fetchDolar().getPromedio();
     }
 
 }

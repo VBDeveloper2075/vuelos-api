@@ -57,18 +57,18 @@ public class VueloController {
     }
 
     @GetMapping("/locations")
-    public List<Vuelo> getVueloByLocation(@RequestParam String origen) {
-        return vueloService.getByOrigen(origen);
+    public List<Vuelo> getVueloByLocation(@RequestParam String origen, @RequestParam String destino) {
+        return vueloService.getByOrigenyDestino(origen, destino);
     }
 
     @GetMapping("/ofertas")
     public List<Vuelo> getOfertas() {
-        int ofertas = 100000;
+        Integer ofertas = 1000;
         return vueloService.getOfertas(ofertas);
     }
 
-    @GetMapping("/dolarPrice")
-    public Dolar getDolar() {
+    @GetMapping("/precio-dolar")
+    public double getDolar() {
         return vueloService.getDolar();
     }
 

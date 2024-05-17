@@ -20,15 +20,19 @@ public class Vuelo {
 //    manualmente.
 
     private Long id;
+    private String origen;
     private String destino;
     private LocalDateTime fecha_hora_llegada;
     private LocalDateTime fecha_hora_salida;
     private String frecuencia;
-    private String origen;
     private double precio;
 
     public Double getPrecio_en_pesos()    {
         Double precio_en_pesos = precio * 100;
         return precio_en_pesos;
+    }
+
+    public Company getCompany() {
+        return Company.AEROLINEAS;
     }
 }

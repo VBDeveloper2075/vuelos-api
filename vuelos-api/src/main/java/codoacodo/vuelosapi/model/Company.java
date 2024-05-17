@@ -13,6 +13,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 public class Company {
+    public static final Company AEROLINEAS = new Company("Aerolíneas Argentinas", "https://www.aerolineas.com.ar");
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
