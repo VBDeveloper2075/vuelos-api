@@ -14,7 +14,7 @@ public class VueloUtils {
 //    completar en service con la anotacion Autowired
 
     @Bean
-    public RestTemplate restTemplate(){
+    public RestTemplate  vueloUtilsRestTemplate(){
         return new RestTemplate();
     }
 
